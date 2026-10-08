@@ -66,8 +66,7 @@
     h1 { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(3rem, 5.6vw, 6.4rem); font-weight: 700; line-height: 1.14; letter-spacing: -.065em; }
     h1 span { color: var(--accent-2); }
     .hero-copy { margin: 2rem 0 0; max-width: 680px; font-size: clamp(1rem, 1.55vw, 1.25rem); font-weight: 600; line-height: 1.9; }
-    .hero-proof { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .65rem; }
-    .hero-proof span { padding: .48rem .8rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; font-size: .74rem; color: rgba(255,255,255,.72); }
+    .hero-note { margin: 2rem 0 0; padding-left: 1rem; border-left: 3px solid var(--accent); color: rgba(255,255,255,.7); font-size: .85rem; letter-spacing: .05em; }
     .hero-meta { margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
     .name { font-weight: 900; font-size: 1.2rem; letter-spacing: .06em; }
     .role { color: rgba(255,255,255,.62); font-size: .88rem; }
@@ -75,7 +74,22 @@
     .scroll-cue::after { content: ""; width: 42px; height: 1px; background: currentColor; animation: breathe 1.8s infinite; transform-origin: left; }
     @keyframes breathe { 50% { transform: scaleX(.35); } }
 
-    .statement { background: var(--white); }
+    .profile-intro { background: var(--white); position: relative; }
+    .profile-intro::before { content: "PROFILE"; position: absolute; right: -20px; top: 44px; font-family: Georgia, serif; font-size: clamp(6rem, 14vw, 13rem); font-weight: 700; line-height: 1; color: rgba(8,23,43,.035); letter-spacing: -.07em; pointer-events: none; }
+    .profile-intro-grid { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(3rem, 8vw, 8rem); align-items: center; }
+    .profile-title { margin: 0; max-width: 720px; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(2.4rem, 5.4vw, 5.3rem); line-height: 1.28; letter-spacing: -.055em; }
+    .profile-title span { color: var(--accent); }
+    .profile-text { margin-top: 2rem; color: #43505e; }
+    .profile-text p { margin: 0 0 1.25rem; }
+    .profile-card { padding: 38px; background: var(--ink); color: white; box-shadow: 18px 18px 0 #e7e1d8; }
+    .profile-fact { display: grid; grid-template-columns: 86px 1fr; gap: 1.1rem; padding: 1.05rem 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .profile-fact:first-child { padding-top: 0; }
+    .profile-fact span { color: var(--accent-2); font-family: Georgia, serif; font-weight: 700; }
+    .profile-fact strong { font-size: .95rem; font-weight: 600; }
+    .profile-joke { margin: 1.6rem 0 0; color: rgba(255,255,255,.68); font-size: .88rem; }
+    .profile-joke b { color: white; }
+
+    .statement { background: var(--paper); }
     .statement-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(3rem, 8vw, 9rem); align-items: start; }
     .statement-big { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(2.2rem, 4.5vw, 4.4rem); line-height: 1.4; letter-spacing: -.04em; }
     .statement-big mark { color: inherit; background: linear-gradient(transparent 64%, rgba(237,85,65,.28) 0); }
@@ -168,7 +182,8 @@
       h1 { font-size: clamp(2.8rem, 11.5vw, 5.2rem); }
       .hero-copy { margin-top: 1.5rem; font-size: 1rem; }
       .scroll-cue { display: none; }
-      .statement-grid, .support-head, .career-head, .values-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .profile-intro-grid, .statement-grid, .support-head, .career-head, .values-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .profile-card { box-shadow: 10px 10px 0 #e7e1d8; }
       .support-grid { grid-template-columns: 1fr; }
       .support-card { min-height: 0; }
       .support-promise { grid-template-columns: 1fr; gap: .7rem; }
@@ -207,10 +222,10 @@
     <div class="nav-inner wrap">
       <a class="brand" href="#top">MASAKATSU<span>.</span></a>
       <ul class="nav-links">
-        <li><a href="#story">MISSION</a></li>
-        <li><a href="#support">SUPPORT</a></li>
+        <li><a href="#profile">PROFILE</a></li>
         <li><a href="#career">CAREER</a></li>
-        <li><a href="#life">PROFILE</a></li>
+        <li><a href="#story">MISSION</a></li>
+        <li><a href="#life">OFF TIME</a></li>
       </ul>
     </div>
   </nav>
@@ -220,12 +235,10 @@
       <div class="hero-portrait"><img src="assets/profile-business.jpg" alt="株式会社ライトアップ 杉山正勝"></div>
       <div class="hero-content">
         <div class="hero-inner">
-          <p class="hero-kicker">SUBSIDY SUPPORT × AI</p>
-          <h1>使える制度を、<br><span>事業の前進力に。</span></h1>
-          <p class="hero-copy">助成金・補助金は、申請して終わりではありません。国の支援を、採用・設備・IT・新しい挑戦へ。現場で培った知見をもとに、御社の次の一歩まで見据えて支援します。</p>
-          <div class="hero-proof" aria-label="主な実績">
-            <span>セミナー 約300回</span><span>営業・支援体制・AI</span><span>新卒から一社一筋</span>
-          </div>
+          <p class="hero-kicker">SUPPORTING BUSINESS CHALLENGES</p>
+          <h1>挑戦を、<br><span>制度で前へ。</span></h1>
+          <p class="hero-copy">補助金・助成金は、企業のチャレンジを支えるための制度です。知らないままにせず、難しいからと諦めず、使えるものは、ぜひ使ってほしい。私はその選択肢を、わかりやすく届けます。</p>
+          <p class="hero-note">助成金・補助金の現場に、新卒から一筋。</p>
           <div class="hero-meta">
             <span class="name">杉山 正勝</span>
             <span class="role">株式会社ライトアップ｜助成金・補助金 × AI</span>
@@ -237,11 +250,31 @@
   </header>
 
   <main id="main">
+    <section class="section profile-intro" id="profile">
+      <div class="wrap profile-intro-grid">
+        <div class="reveal">
+          <p class="eyebrow">About Me</p>
+          <h2 class="profile-title">まじめです。<br>でも、<span>楽しいことが好きです。</span></h2>
+          <div class="profile-text">
+            <p>1991年、東京都足立区生まれ。自分で言うのもなんですが、性格はかなりまじめな方です。一方で、人を笑わせたり、みんなで楽しい時間をつくったりすることも好きです。</p>
+            <p>大学では外国語学部で英語を学びながら、「ユーモアを通じて世界の文化を研究する」ゼミへ。人によって笑うところが違う。その違いを面白がる経験は、いま相手の話を聞き、考えを理解する仕事にもつながっています。</p>
+          </div>
+        </div>
+        <aside class="profile-card reveal" aria-label="プロフィール概要">
+          <div class="profile-fact"><span>1991</span><strong>東京都足立区生まれ</strong></div>
+          <div class="profile-fact"><span>ENGLISH</span><strong>外国語学部で英語を専攻</strong></div>
+          <div class="profile-fact"><span>HUMOR</span><strong>ユーモアから世界の文化を研究</strong></div>
+          <div class="profile-fact"><span>FIJI</span><strong>大学時代に2週間の短期留学</strong></div>
+          <p class="profile-joke">TOEIC最高スコアは <b>805点</b>。<br>……いまは、すっかり使っていません。</p>
+        </aside>
+      </div>
+    </section>
+
     <section class="section statement" id="story">
       <div class="wrap statement-grid">
         <div class="reveal">
           <p class="eyebrow">My Mission</p>
-          <h2 class="statement-big">補助制度は、<br><mark>企業の挑戦のためにある。</mark></h2>
+          <h2 class="statement-big">制度を、<br><mark>挑戦する人の手に。</mark></h2>
         </div>
         <div class="statement-body reveal">
           <p>日本には、企業の挑戦を後押しする助成金・補助金があります。しかし、制度を知らない、難しそうで踏み出せない、申請に割く時間がない。そんな理由で、本来使えるはずの支援を逃している企業は少なくありません。</p>
@@ -262,13 +295,13 @@
     <section class="section support" id="support">
       <div class="wrap">
         <div class="support-head reveal">
-          <div><p class="eyebrow">What I Deliver</p><h2 class="section-title">すべての企業に、<br>制度活用という選択肢を。</h2></div>
-          <p class="section-lead">制度は複雑です。だからこそ、情報を並べるだけではなく、御社の事業と投資計画に結びつけ、実行できる形にするところまでがプロの役割だと考えています。</p>
+          <div><p class="eyebrow">What I Believe</p><h2 class="section-title">この仕事で、<br>大切にしていること。</h2></div>
+          <p class="section-lead">制度は複雑です。だからこそ、ただ情報を並べるのではなく、その企業が何を実現したいのかを理解し、使える形にするところまでが私の役割だと考えています。</p>
         </div>
         <div class="support-grid reveal">
-          <article class="support-card"><h3>可能性を見つける</h3><p>企業の状況やこれから取り組みたいことを伺い、数ある制度の中から活用可能性を整理します。「知らなかった」で機会を逃さないための入口です。</p></article>
-          <article class="support-card"><h3>事業計画につなげる</h3><p>申請のためだけの計画にはしません。採用、設備、IT、新規事業など、本当に実現したい投資を起点に制度活用を設計します。</p></article>
-          <article class="support-card"><h3>実行を前へ進める</h3><p>制度のわかりにくさや申請業務の負担を減らし、企業が本業と挑戦に集中できる環境へ。AIも活用し、支援の質とスピードを高めます。</p></article>
+          <article class="support-card"><h3>「知らなかった」で終わらせない</h3><p>使える可能性のある制度を、必要な企業へわかりやすく届ける。まずは選択肢を知ってもらうことを大切にしています。</p></article>
+          <article class="support-card"><h3>申請することを目的にしない</h3><p>採用、設備、IT、新規事業。制度ありきではなく、本当に実現したい投資から考えます。</p></article>
+          <article class="support-card"><h3>人の仕事を、技術で軽くする</h3><p>AIを活用して申請業務の負担を減らし、企業も支援者も、本来向き合うべき仕事に集中できる環境をつくります。</p></article>
         </div>
         <div class="support-promise reveal"><strong>申請は、目的ではない。</strong><p>国の支援金を、御社の成長につながる具体的な行動へ変える。そのために、制度と現場の間に立ち、わかりやすく、誠実に伴走します。</p></div>
       </div>
@@ -283,7 +316,7 @@
         <div class="timeline">
           <article class="moment reveal">
             <div class="moment-year">大学時代</div><div class="moment-dot"></div>
-            <div><h3>英語とユーモアから、文化を知る</h3><p>外国語学部で英語を専攻。ユーモアを通じて世界の文化を研究し、フィジーにも短期留学。TOEIC最高805点です。……いまは、すっかり使っていません。</p><span class="tag">ENGLISH / HUMOR</span></div>
+            <div><h3>英語とユーモアから、文化を知る</h3><p>外国語学部で英語を専攻。ユーモアを通じて世界の文化を研究し、フィジーにも2週間の短期留学。人の違いを面白がる視点は、いまの対話の原点です。</p><span class="tag">ENGLISH / HUMOR</span></div>
           </article>
           <article class="moment reveal">
             <div class="moment-year">新卒入社</div><div class="moment-dot"></div>
@@ -325,7 +358,7 @@
       <div class="wrap">
         <div class="off-head reveal">
           <div><p class="eyebrow">Off Time</p><h2 class="section-title">気づけば、<br>抱っこしている写真ばかり。</h2></div>
-          <p class="section-lead">1991年、東京都足立区生まれ。仕事を離れれば、最近いちばん楽しいのは6歳の息子と過ごす時間。虫と恐竜と植物の成長を追いかけています。</p>
+          <p class="section-lead">仕事を離れれば、最近いちばん楽しいのは6歳の息子と過ごす時間。虫と恐竜と植物の成長を追いかけています。</p>
         </div>
         <div class="gallery reveal">
           <figure class="photo-card"><img src="assets/profile-family.jpg" alt="子どもを抱っこしながら一緒に遊ぶ杉山正勝" loading="lazy"><figcaption class="photo-caption"><strong>子どもと遊ぶ週末</strong><span>虫・恐竜イベント、人生ゲーム、カードゲーム</span></figcaption></figure>
