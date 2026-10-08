@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>杉山 正勝｜まじめ、一筋。</title>
+  <meta name="description" content="助成金・補助金の現場とともに歩み、いまはAIによる申請自動化へ。株式会社ライトアップ 杉山正勝の自己紹介。">
+  <meta name="theme-color" content="#08172b">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308172b'/%3E%3Cpath d='M18 19h28v7H26v8h17v7H26v13h-8z' fill='%23fff'/%3E%3Ccircle cx='46' cy='48' r='6' fill='%23f05a47'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #08172b;
+      --ink-soft: #1a2a3e;
+      --paper: #f7f4ee;
+      --white: #fffdf9;
+      --accent: #ed5541;
+      --accent-2: #ffbd59;
+      --line: rgba(8, 23, 43, .15);
+      --muted: #66717f;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip { position: absolute; left: -9999px; top: 1rem; z-index: 100; background: white; padding: .7rem 1rem; }
+    .skip:focus { left: 1rem; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 .7rem; color: var(--accent); font-weight: 800; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; }
+    .section { padding: 110px 0; }
+    .section-title { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(2.1rem, 5vw, 4.8rem); line-height: 1.12; letter-spacing: -.04em; }
+    .section-lead { margin: 1.5rem 0 0; max-width: 650px; color: var(--muted); }
+
+    .nav {
+      position: fixed; inset: 0 0 auto; z-index: 30; color: white;
+      transition: background .25s, box-shadow .25s;
+    }
+    .nav.scrolled { background: rgba(8,23,43,.9); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,.1); }
+    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { text-decoration: none; font-weight: 900; letter-spacing: .08em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.7rem; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; font-size: .82rem; letter-spacing: .08em; opacity: .8; }
+    .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; color: var(--accent-2); }
+
+    .hero { min-height: 100svh; background: var(--ink); color: white; position: relative; overflow: hidden; display: grid; align-items: end; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, #08172b 8%, rgba(8,23,43,.92) 43%, rgba(8,23,43,.1) 75%), url("assets/profile-business.jpg") 76% 28%/cover no-repeat; }
+    .hero::after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; right: -110px; bottom: -190px; box-shadow: 0 0 0 70px rgba(255,255,255,.03), 0 0 0 140px rgba(255,255,255,.02); }
+    .hero-inner { position: relative; z-index: 2; padding: 160px 0 78px; }
+    .hero-kicker { display: flex; align-items: center; gap: .8rem; margin: 0 0 1.5rem; font-size: .8rem; letter-spacing: .25em; color: rgba(255,255,255,.66); }
+    .hero-kicker::before { content: ""; width: 36px; height: 2px; background: var(--accent); }
+    h1 { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(4rem, 11vw, 9.2rem); font-weight: 700; line-height: .92; letter-spacing: -.07em; }
+    h1 .dot { color: var(--accent); }
+    .hero-copy { margin: 2.2rem 0 0; max-width: 590px; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 600; line-height: 1.85; }
+    .hero-meta { margin-top: 3.1rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .name { font-weight: 900; font-size: 1.2rem; letter-spacing: .06em; }
+    .role { color: rgba(255,255,255,.62); font-size: .88rem; }
+    .scroll-cue { margin-left: auto; display: flex; align-items: center; gap: .7rem; font-size: .72rem; letter-spacing: .16em; color: rgba(255,255,255,.55); }
+    .scroll-cue::after { content: ""; width: 42px; height: 1px; background: currentColor; animation: breathe 1.8s infinite; transform-origin: left; }
+    @keyframes breathe { 50% { transform: scaleX(.35); } }
+
+    .statement { background: var(--white); }
+    .statement-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(3rem, 8vw, 9rem); align-items: start; }
+    .statement-big { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(2.2rem, 4.5vw, 4.4rem); line-height: 1.4; letter-spacing: -.04em; }
+    .statement-big mark { color: inherit; background: linear-gradient(transparent 64%, rgba(237,85,65,.28) 0); }
+    .statement-body { font-size: 1.06rem; color: #3f4c5b; }
+    .statement-body p { margin: 0 0 1.5rem; }
+    .aside-note { margin-top: 2rem; padding: 1.2rem 1.4rem; border-left: 3px solid var(--accent); background: #f7eee9; color: var(--ink); font-weight: 700; }
+
+    .numbers { background: var(--ink); color: white; padding: 0 0 90px; }
+    .number-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.14); border-bottom: 1px solid rgba(255,255,255,.14); }
+    .number-card { padding: 58px 40px; border-right: 1px solid rgba(255,255,255,.14); }
+    .number-card:last-child { border-right: 0; }
+    .number { font-family: Georgia, serif; font-size: clamp(3.5rem, 7vw, 6rem); line-height: 1; color: var(--accent-2); letter-spacing: -.05em; }
+    .number small { font-family: inherit; font-size: .38em; margin-left: .15em; }
+    .number-label { margin: 1rem 0 0; color: rgba(255,255,255,.68); font-size: .9rem; }
+
+    .career { background: var(--paper); }
+    .career-head { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 70px; }
+    .timeline { position: relative; max-width: 950px; margin-left: auto; }
+    .timeline::before { content: ""; position: absolute; left: 159px; top: 12px; bottom: 22px; width: 1px; background: var(--line); }
+    .moment { display: grid; grid-template-columns: 130px 58px 1fr; gap: 0; padding: 0 0 58px; position: relative; }
+    .moment:last-child { padding-bottom: 0; }
+    .moment-year { padding-top: 2px; font-family: Georgia, serif; font-size: .95rem; color: var(--accent); font-weight: bold; text-align: right; }
+    .moment-dot { position: relative; }
+    .moment-dot::after { content: ""; position: absolute; left: 24px; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: var(--paper); border: 3px solid var(--accent); }
+    .moment h3 { margin: 0 0 .7rem; font-size: 1.35rem; line-height: 1.5; }
+    .moment p { margin: 0; color: var(--muted); }
+    .tag { display: inline-block; margin-top: 1rem; padding: .25rem .7rem; border: 1px solid var(--line); border-radius: 999px; font-size: .74rem; font-weight: 700; letter-spacing: .06em; }
+
+    .values { background: #e9edf1; }
+    .values-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; }
+    .values-photo { min-height: 610px; position: relative; overflow: hidden; background: #d6dce4; }
+    .values-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 26%; filter: saturate(.85); }
+    .values-photo::after { content: "ONE TEAM"; position: absolute; left: 24px; bottom: 19px; color: white; font-family: Georgia, serif; font-size: .82rem; letter-spacing: .24em; }
+    .value-list { margin-top: 3rem; }
+    .value { display: grid; grid-template-columns: 44px 1fr; gap: 1.2rem; padding: 1.4rem 0; border-top: 1px solid rgba(8,23,43,.15); }
+    .value:last-child { border-bottom: 1px solid rgba(8,23,43,.15); }
+    .value-num { font-family: Georgia, serif; color: var(--accent); }
+    .value h3 { margin: 0 0 .35rem; font-size: 1.15rem; }
+    .value p { margin: 0; color: #5e6976; font-size: .93rem; }
+
+    .off { background: var(--white); }
+    .off-head { display: flex; justify-content: space-between; gap: 3rem; align-items: end; margin-bottom: 55px; }
+    .off-head .section-lead { text-align: right; }
+    .gallery { display: grid; grid-template-columns: 1.12fr .88fr; gap: 24px; }
+    .photo-card { position: relative; min-height: 560px; overflow: hidden; background: #dce2e8; }
+    .photo-card.small { min-height: 560px; }
+    .photo-card img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+    .photo-card:first-child img { object-position: 52% 32%; }
+    .photo-card.small img { object-position: 48% 32%; }
+    .photo-card:hover img { transform: scale(1.025); }
+    .photo-caption { position: absolute; inset: auto 0 0; padding: 70px 28px 25px; color: white; background: linear-gradient(transparent, rgba(8,23,43,.82)); }
+    .photo-caption strong { display: block; font-size: 1.1rem; }
+    .photo-caption span { font-size: .78rem; opacity: .75; }
+    .off-grid { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .interest { padding: 30px; background: var(--paper); border-top: 4px solid var(--accent); }
+    .interest-icon { font-size: 1.8rem; }
+    .interest h3 { margin: .8rem 0 .4rem; font-size: 1.12rem; }
+    .interest p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .closing { background: var(--accent); color: white; text-align: center; padding: 125px 20px; position: relative; overflow: hidden; }
+    .closing::before { content: "“"; position: absolute; left: 50%; top: -60px; transform: translateX(-50%); font-family: Georgia, serif; font-size: 28rem; line-height: 1; color: rgba(255,255,255,.08); }
+    .closing blockquote { position: relative; margin: 0 auto; max-width: 850px; font-family: Georgia, "Yu Mincho", serif; font-weight: 700; font-size: clamp(2rem, 5vw, 4.7rem); line-height: 1.45; letter-spacing: -.04em; }
+    .closing p { position: relative; margin: 1.6rem 0 0; opacity: .78; }
+    footer { background: var(--ink); color: white; padding: 32px 0; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 1rem; font-size: .78rem; color: rgba(255,255,255,.55); }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 820px) {
+      .section { padding: 78px 0; }
+      .nav-links { display: none; }
+      .nav-inner { height: 62px; }
+      .hero::before { background: linear-gradient(0deg, #08172b 2%, rgba(8,23,43,.75) 52%, rgba(8,23,43,.18) 82%), url("assets/profile-business.jpg") 40% 18%/cover no-repeat; }
+      .hero-inner { padding: 380px 0 52px; }
+      h1 { font-size: clamp(3.8rem, 20vw, 6.4rem); }
+      .hero-copy { margin-top: 1.5rem; font-size: 1rem; }
+      .scroll-cue { display: none; }
+      .statement-grid, .career-head, .values-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .number-grid { grid-template-columns: 1fr; }
+      .number-card { padding: 34px 24px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+      .number-card:last-child { border-bottom: 0; }
+      .timeline { margin-left: 0; }
+      .timeline::before { left: 11px; }
+      .moment { grid-template-columns: 28px 1fr; }
+      .moment-year { grid-column: 2; grid-row: 1; text-align: left; margin-bottom: .4rem; }
+      .moment-dot { grid-column: 1; grid-row: 1 / span 2; }
+      .moment-dot::after { left: 5px; }
+      .moment > div:last-child { grid-column: 2; }
+      .values-photo { min-height: 480px; order: 2; }
+      .gallery { grid-template-columns: 1fr; }
+      .photo-card, .photo-card.small { min-height: 520px; }
+      .off-head { display: block; }
+      .off-head .section-lead { text-align: left; }
+      .off-grid { grid-template-columns: 1fr; }
+      .footer-inner { display: block; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .hero-inner { padding-top: 330px; }
+      .hero-kicker { letter-spacing: .13em; }
+      .hero-meta { gap: .45rem 1rem; }
+      .role { width: 100%; }
+      .photo-card, .photo-card.small { min-height: 440px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <nav class="nav" aria-label="主要メニュー">
+    <div class="nav-inner wrap">
+      <a class="brand" href="#top">MASAKATSU<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#story">STORY</a></li>
+        <li><a href="#career">CAREER</a></li>
+        <li><a href="#values">VALUES</a></li>
+        <li><a href="#life">OFF TIME</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner wrap">
+      <p class="hero-kicker">SERIOUSLY, WITH A SMILE.</p>
+      <h1>まじめ、<br>一筋<span class="dot">。</span></h1>
+      <p class="hero-copy">制度の現場から、AIで申請する未来へ。<br>仕事にも、家族にも、愚直なくらい誠実に。</p>
+      <div class="hero-meta">
+        <span class="name">杉山 正勝</span>
+        <span class="role">株式会社ライトアップ｜助成金・補助金 × AI</span>
+        <span class="scroll-cue">SCROLL</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section statement" id="story">
+      <div class="wrap statement-grid">
+        <div class="reveal">
+          <p class="eyebrow">My Story</p>
+          <h2 class="statement-big">まじめに向き合い、<br><mark>楽しく前へ。</mark></h2>
+        </div>
+        <div class="statement-body reveal">
+          <p>1991年、東京都足立区生まれ。性格はまじめ。でも、楽しいことが好きです。大学では外国語学部で英語を学びながら、「ユーモアを通じて世界の文化を研究する」ゼミへ。フィジーへの2週間の留学も経験しました。</p>
+          <p>新卒で株式会社ライトアップに入社して以来、ずっと同じ会社で、助成金・補助金の事業に向き合ってきました。事業が立ち上がった、まさにそのタイミングから。だから、私の社会人の歴史は、助成金・補助金事業の歴史と言ってもいいかもしれません。</p>
+          <div class="aside-note">ちなみにTOEIC最高805点。……いまは、すっかり使っていません。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers" aria-label="数字で見るプロフィール">
+      <div class="wrap number-grid reveal">
+        <div class="number-card"><div class="number">300<small>回+</small></div><p class="number-label">全国で実施したセミナー</p></div>
+        <div class="number-card"><div class="number">805</div><p class="number-label">TOEIC 最高スコア</p></div>
+        <div class="number-card"><div class="number">1<small>社</small></div><p class="number-label">新卒から一筋、ライトアップ</p></div>
+      </div>
+    </section>
+
+    <section class="section career" id="career">
+      <div class="wrap">
+        <div class="career-head reveal">
+          <div><p class="eyebrow">Career</p><h2 class="section-title">制度の現場を、<br>ずっと見てきた。</h2></div>
+          <p class="section-lead">提案する人、届ける人、支える人。そして今は、仕組みそのものを変える人へ。役割が変わっても、制度を必要とする人のそばにいることは変わりません。</p>
+        </div>
+        <div class="timeline">
+          <article class="moment reveal">
+            <div class="moment-year">大学時代</div><div class="moment-dot"></div>
+            <div><h3>英語とユーモアから、文化を知る</h3><p>外国語学部で英語を専攻。ユーモアを通じて世界の文化を研究し、フィジーにも短期留学。人の違いを面白がる視点は、いまの対話の原点です。</p><span class="tag">ENGLISH / HUMOR</span></div>
+          </article>
+          <article class="moment reveal">
+            <div class="moment-year">新卒入社</div><div class="moment-dot"></div>
+            <div><h3>助成金・補助金事業の立ち上がりとともに</h3><p>株式会社ライトアップへ入社。ちょうど事業が始まった時期から、企業へのコンサルティング提案に携わりました。</p><span class="tag">SALES</span></div>
+          </article>
+          <article class="moment reveal">
+            <div class="moment-year">営業時代</div><div class="moment-dot"></div>
+            <div><h3>全国の社長へ、制度活用を伝える</h3><p>北陸・中国地方・沖縄を担当し、約300回のセミナーを実施。難しく見える制度を、経営者が「自分ごと」にできる言葉で伝えてきました。</p><span class="tag">SEMINAR / CONSULTING</span></div>
+          </article>
+          <article class="moment reveal">
+            <div class="moment-year">次の役割</div><div class="moment-dot"></div>
+            <div><h3>届けた後まで、きちんと支える</h3><p>より確かな申請支援体制をつくるため、カスタマーサポート部署の責任者へ。お客様の声を受け止め、組織として応える仕組みを整えました。</p><span class="tag">CUSTOMER SUCCESS</span></div>
+          </article>
+          <article class="moment reveal">
+            <div class="moment-year">現在</div><div class="moment-dot"></div>
+            <div><h3>AIで、申請業務の未来をつくる</h3><p>現在は、社会保険労務士の皆さまに向けて、AIによる申請業務の自動化を推進。積み重ねてきた現場知を、新しい技術につないでいます。</p><span class="tag">AI / AUTOMATION</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values" id="values">
+      <div class="wrap values-grid">
+        <div class="values-photo reveal"><img src="assets/profile-rugby.jpg" alt="ラグビー場で子どもと手を合わせる杉山正勝" loading="lazy"></div>
+        <div class="reveal">
+          <p class="eyebrow">My Values</p>
+          <h2 class="section-title">強さより、<br>続ける力。</h2>
+          <p class="section-lead">小中学校では柔道、高校ではラグビー。どちらも友人に誘われて始めました。細身の自分には正直きつかった。でも、そこで覚えたのは、派手な強さより、逃げずに続けることでした。</p>
+          <div class="value-list">
+            <div class="value"><span class="value-num">01</span><div><h3>難しいことを、わかりやすく</h3><p>制度もAIも、使う人に伝わってこそ価値になる。</p></div></div>
+            <div class="value"><span class="value-num">02</span><div><h3>一度きりより、長く向き合う</h3><p>会社も事業も一筋。信頼は時間の中で育つもの。</p></div></div>
+            <div class="value"><span class="value-num">03</span><div><h3>まじめな仕事に、少しのユーモアを</h3><p>誠実さはそのままに、場を明るくする余白を忘れない。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section off" id="life">
+      <div class="wrap">
+        <div class="off-head reveal">
+          <div><p class="eyebrow">Off Time</p><h2 class="section-title">気づけば、<br>抱っこしている写真ばかり。</h2></div>
+          <p class="section-lead">最近いちばん楽しいのは、6歳の息子と過ごす時間。仕事を離れれば、虫と恐竜と植物の成長を追いかけています。</p>
+        </div>
+        <div class="gallery reveal">
+          <figure class="photo-card"><img src="assets/profile-family.jpg" alt="子どもを抱っこしながら一緒に遊ぶ杉山正勝" loading="lazy"><figcaption class="photo-caption"><strong>子どもと遊ぶ週末</strong><span>虫・恐竜イベント、人生ゲーム、カードゲーム</span></figcaption></figure>
+          <figure class="photo-card small"><img src="assets/profile-rugby.jpg" alt="子どもと向き合う杉山正勝" loading="lazy"><figcaption class="photo-caption"><strong>一緒に夢中になる</strong><span>遊ぶときも、だいたい本気です。</span></figcaption></figure>
+        </div>
+        <div class="off-grid reveal">
+          <article class="interest"><div class="interest-icon" aria-hidden="true">🌱</div><h3>ベランダ菜園</h3><p>ミニトマト、大葉、バジル、ディル、シャインマスカット、さくらんぼ。最近はハラペーニョも育成中。</p></article>
+          <article class="interest"><div class="interest-icon" aria-hidden="true">🐟</div><h3>メダカの小さな世界</h3><p>ベランダのビオトープでメダカを飼育中。次はどんな生き物を迎えようか、思案しています。</p></article>
+          <article class="interest"><div class="interest-icon" aria-hidden="true">🦖</div><h3>6歳の息子と</h3><p>虫や恐竜のイベントへ出かけたり、人生ゲームやカードゲームで真剣勝負したり。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <blockquote>変わり続ける仕事に、<br>変わらない誠実さを。</blockquote>
+      <p>制度の現場と、人の気持ちをつなぐ仕事をしていきます。</p>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner wrap"><span>MASAKATSU SUGIYAMA</span><span>© 2026 All Rights Reserved.</span></div></footer>
+
+  <script>
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    onScroll();
+    addEventListener('scroll', onScroll, { passive: true });
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      }), { threshold: .12 });
+      items.forEach(item => observer.observe(item));
+    } else { items.forEach(item => item.classList.add('visible')); }
+  </script>
+</body>
+</html>
