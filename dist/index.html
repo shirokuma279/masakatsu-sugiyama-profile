@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>杉山 正勝｜まじめ、一筋。</title>
-  <meta name="description" content="助成金・補助金の現場とともに歩み、いまはAIによる申請自動化へ。株式会社ライトアップ 杉山正勝の自己紹介。">
+  <title>杉山 正勝｜補助制度を、事業の前進力に。</title>
+  <meta name="description" content="約300回のセミナーと、営業・支援体制・AIの現場経験。助成金・補助金を企業の挑戦につなげる、株式会社ライトアップ 杉山正勝の自己紹介。">
   <meta name="theme-color" content="#08172b">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308172b'/%3E%3Cpath d='M18 19h28v7H26v8h17v7H26v13h-8z' fill='%23fff'/%3E%3Ccircle cx='46' cy='48' r='6' fill='%23f05a47'/%3E%3C/svg%3E">
   <style>
@@ -53,16 +53,22 @@
     .nav-links a { text-decoration: none; font-size: .82rem; letter-spacing: .08em; opacity: .8; }
     .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; color: var(--accent-2); }
 
-    .hero { min-height: 100svh; background: var(--ink); color: white; position: relative; overflow: hidden; display: grid; align-items: end; }
-    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, #08172b 8%, rgba(8,23,43,.92) 43%, rgba(8,23,43,.1) 75%), url("assets/profile-business.jpg") 76% 28%/cover no-repeat; }
-    .hero::after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; right: -110px; bottom: -190px; box-shadow: 0 0 0 70px rgba(255,255,255,.03), 0 0 0 140px rgba(255,255,255,.02); }
-    .hero-inner { position: relative; z-index: 2; padding: 160px 0 78px; }
+    .hero { min-height: 100svh; background: var(--ink); color: white; position: relative; overflow: hidden; }
+    .hero-grid { min-height: 100svh; display: grid; grid-template-columns: minmax(360px, .88fr) minmax(580px, 1.12fr); }
+    .hero-portrait { position: relative; overflow: hidden; background: #c9c1b4; }
+    .hero-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8,23,43,.34), transparent 38%); }
+    .hero-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 45% 28%; }
+    .hero-content { position: relative; display: flex; align-items: center; background: var(--ink); }
+    .hero-content::after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; right: -160px; bottom: -220px; box-shadow: 0 0 0 70px rgba(255,255,255,.025), 0 0 0 140px rgba(255,255,255,.018); }
+    .hero-inner { position: relative; z-index: 2; width: 100%; max-width: 920px; padding: 140px clamp(44px, 7vw, 110px) 70px; }
     .hero-kicker { display: flex; align-items: center; gap: .8rem; margin: 0 0 1.5rem; font-size: .8rem; letter-spacing: .25em; color: rgba(255,255,255,.66); }
     .hero-kicker::before { content: ""; width: 36px; height: 2px; background: var(--accent); }
-    h1 { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(4rem, 11vw, 9.2rem); font-weight: 700; line-height: .92; letter-spacing: -.07em; }
-    h1 .dot { color: var(--accent); }
-    .hero-copy { margin: 2.2rem 0 0; max-width: 590px; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 600; line-height: 1.85; }
-    .hero-meta { margin-top: 3.1rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    h1 { margin: 0; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(3rem, 5.6vw, 6.4rem); font-weight: 700; line-height: 1.14; letter-spacing: -.065em; }
+    h1 span { color: var(--accent-2); }
+    .hero-copy { margin: 2rem 0 0; max-width: 680px; font-size: clamp(1rem, 1.55vw, 1.25rem); font-weight: 600; line-height: 1.9; }
+    .hero-proof { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .65rem; }
+    .hero-proof span { padding: .48rem .8rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; font-size: .74rem; color: rgba(255,255,255,.72); }
+    .hero-meta { margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
     .name { font-weight: 900; font-size: 1.2rem; letter-spacing: .06em; }
     .role { color: rgba(255,255,255,.62); font-size: .88rem; }
     .scroll-cue { margin-left: auto; display: flex; align-items: center; gap: .7rem; font-size: .72rem; letter-spacing: .16em; color: rgba(255,255,255,.55); }
@@ -84,6 +90,18 @@
     .number { font-family: Georgia, serif; font-size: clamp(3.5rem, 7vw, 6rem); line-height: 1; color: var(--accent-2); letter-spacing: -.05em; }
     .number small { font-family: inherit; font-size: .38em; margin-left: .15em; }
     .number-label { margin: 1rem 0 0; color: rgba(255,255,255,.68); font-size: .9rem; }
+
+    .support { background: var(--white); }
+    .support-head { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(3rem, 8vw, 8rem); align-items: end; margin-bottom: 60px; }
+    .support-head .section-lead { font-size: 1.05rem; color: #43505e; }
+    .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: support; }
+    .support-card { position: relative; padding: 38px 30px 34px; min-height: 300px; background: var(--paper); border-top: 4px solid var(--accent); counter-increment: support; }
+    .support-card::before { content: "0" counter(support); display: block; margin-bottom: 2.2rem; font-family: Georgia, serif; color: var(--accent); font-size: 1rem; }
+    .support-card h3 { margin: 0 0 .9rem; font-size: 1.35rem; }
+    .support-card p { margin: 0; color: var(--muted); }
+    .support-promise { margin-top: 24px; padding: 30px 34px; display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; background: var(--accent); color: white; }
+    .support-promise strong { font-family: Georgia, "Yu Mincho", serif; font-size: 1.55rem; white-space: nowrap; }
+    .support-promise p { margin: 0; color: rgba(255,255,255,.85); }
 
     .career { background: var(--paper); }
     .career-head { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 70px; }
@@ -139,16 +157,21 @@
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
-    @media (max-width: 820px) {
+    @media (max-width: 980px) {
       .section { padding: 78px 0; }
       .nav-links { display: none; }
       .nav-inner { height: 62px; }
-      .hero::before { background: linear-gradient(0deg, #08172b 2%, rgba(8,23,43,.75) 52%, rgba(8,23,43,.18) 82%), url("assets/profile-business.jpg") 40% 18%/cover no-repeat; }
-      .hero-inner { padding: 380px 0 52px; }
-      h1 { font-size: clamp(3.8rem, 20vw, 6.4rem); }
+      .hero-grid { grid-template-columns: 1fr; grid-template-rows: 52svh auto; }
+      .hero-portrait img { object-position: 48% 28%; }
+      .hero-content { min-height: 48svh; }
+      .hero-inner { padding: 54px 24px 48px; }
+      h1 { font-size: clamp(2.8rem, 11.5vw, 5.2rem); }
       .hero-copy { margin-top: 1.5rem; font-size: 1rem; }
       .scroll-cue { display: none; }
-      .statement-grid, .career-head, .values-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .statement-grid, .support-head, .career-head, .values-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .support-grid { grid-template-columns: 1fr; }
+      .support-card { min-height: 0; }
+      .support-promise { grid-template-columns: 1fr; gap: .7rem; }
       .number-grid { grid-template-columns: 1fr; }
       .number-card { padding: 34px 24px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
       .number-card:last-child { border-bottom: 0; }
@@ -169,7 +192,8 @@
     }
     @media (max-width: 480px) {
       .wrap { width: min(calc(100% - 28px), var(--max)); }
-      .hero-inner { padding-top: 330px; }
+      .hero-grid { grid-template-rows: 48svh auto; }
+      .hero-inner { padding: 44px 18px 42px; }
       .hero-kicker { letter-spacing: .13em; }
       .hero-meta { gap: .45rem 1rem; }
       .role { width: 100%; }
@@ -183,23 +207,31 @@
     <div class="nav-inner wrap">
       <a class="brand" href="#top">MASAKATSU<span>.</span></a>
       <ul class="nav-links">
-        <li><a href="#story">STORY</a></li>
+        <li><a href="#story">MISSION</a></li>
+        <li><a href="#support">SUPPORT</a></li>
         <li><a href="#career">CAREER</a></li>
-        <li><a href="#values">VALUES</a></li>
-        <li><a href="#life">OFF TIME</a></li>
+        <li><a href="#life">PROFILE</a></li>
       </ul>
     </div>
   </nav>
 
   <header class="hero" id="top">
-    <div class="hero-inner wrap">
-      <p class="hero-kicker">SERIOUSLY, WITH A SMILE.</p>
-      <h1>まじめ、<br>一筋<span class="dot">。</span></h1>
-      <p class="hero-copy">制度の現場から、AIで申請する未来へ。<br>仕事にも、家族にも、愚直なくらい誠実に。</p>
-      <div class="hero-meta">
-        <span class="name">杉山 正勝</span>
-        <span class="role">株式会社ライトアップ｜助成金・補助金 × AI</span>
-        <span class="scroll-cue">SCROLL</span>
+    <div class="hero-grid">
+      <div class="hero-portrait"><img src="assets/profile-business.jpg" alt="株式会社ライトアップ 杉山正勝"></div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <p class="hero-kicker">SUBSIDY SUPPORT × AI</p>
+          <h1>使える制度を、<br><span>事業の前進力に。</span></h1>
+          <p class="hero-copy">助成金・補助金は、申請して終わりではありません。国の支援を、採用・設備・IT・新しい挑戦へ。現場で培った知見をもとに、御社の次の一歩まで見据えて支援します。</p>
+          <div class="hero-proof" aria-label="主な実績">
+            <span>セミナー 約300回</span><span>営業・支援体制・AI</span><span>新卒から一社一筋</span>
+          </div>
+          <div class="hero-meta">
+            <span class="name">杉山 正勝</span>
+            <span class="role">株式会社ライトアップ｜助成金・補助金 × AI</span>
+            <span class="scroll-cue">SCROLL</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -208,22 +240,37 @@
     <section class="section statement" id="story">
       <div class="wrap statement-grid">
         <div class="reveal">
-          <p class="eyebrow">My Story</p>
-          <h2 class="statement-big">まじめに向き合い、<br><mark>楽しく前へ。</mark></h2>
+          <p class="eyebrow">My Mission</p>
+          <h2 class="statement-big">補助制度は、<br><mark>企業の挑戦のためにある。</mark></h2>
         </div>
         <div class="statement-body reveal">
-          <p>1991年、東京都足立区生まれ。性格はまじめ。でも、楽しいことが好きです。大学では外国語学部で英語を学びながら、「ユーモアを通じて世界の文化を研究する」ゼミへ。フィジーへの2週間の留学も経験しました。</p>
-          <p>新卒で株式会社ライトアップに入社して以来、ずっと同じ会社で、助成金・補助金の事業に向き合ってきました。事業が立ち上がった、まさにそのタイミングから。だから、私の社会人の歴史は、助成金・補助金事業の歴史と言ってもいいかもしれません。</p>
-          <div class="aside-note">ちなみにTOEIC最高805点。……いまは、すっかり使っていません。</div>
+          <p>日本には、企業の挑戦を後押しする助成金・補助金があります。しかし、制度を知らない、難しそうで踏み出せない、申請に割く時間がない。そんな理由で、本来使えるはずの支援を逃している企業は少なくありません。</p>
+          <p>私は、すべての企業が「制度を活用する」という選択肢を持てるようにしたい。国からの支援を原資に、採用や設備投資、IT化、新規事業を前へ進めてほしい。申請書をつくることではなく、その先で事業が動くこと。それが、補助制度を使う本当の意義だと考えています。</p>
+          <div class="aside-note">制度を受け取るところまでではなく、事業が前へ進むところまで。</div>
         </div>
       </div>
     </section>
 
     <section class="numbers" aria-label="数字で見るプロフィール">
       <div class="wrap number-grid reveal">
-        <div class="number-card"><div class="number">300<small>回+</small></div><p class="number-label">全国で実施したセミナー</p></div>
-        <div class="number-card"><div class="number">805</div><p class="number-label">TOEIC 最高スコア</p></div>
+        <div class="number-card"><div class="number">300<small>回+</small></div><p class="number-label">経営者へ制度活用を伝えたセミナー</p></div>
+        <div class="number-card"><div class="number">3<small>領域</small></div><p class="number-label">営業・カスタマーサポート・AI</p></div>
         <div class="number-card"><div class="number">1<small>社</small></div><p class="number-label">新卒から一筋、ライトアップ</p></div>
+      </div>
+    </section>
+
+    <section class="section support" id="support">
+      <div class="wrap">
+        <div class="support-head reveal">
+          <div><p class="eyebrow">What I Deliver</p><h2 class="section-title">すべての企業に、<br>制度活用という選択肢を。</h2></div>
+          <p class="section-lead">制度は複雑です。だからこそ、情報を並べるだけではなく、御社の事業と投資計画に結びつけ、実行できる形にするところまでがプロの役割だと考えています。</p>
+        </div>
+        <div class="support-grid reveal">
+          <article class="support-card"><h3>可能性を見つける</h3><p>企業の状況やこれから取り組みたいことを伺い、数ある制度の中から活用可能性を整理します。「知らなかった」で機会を逃さないための入口です。</p></article>
+          <article class="support-card"><h3>事業計画につなげる</h3><p>申請のためだけの計画にはしません。採用、設備、IT、新規事業など、本当に実現したい投資を起点に制度活用を設計します。</p></article>
+          <article class="support-card"><h3>実行を前へ進める</h3><p>制度のわかりにくさや申請業務の負担を減らし、企業が本業と挑戦に集中できる環境へ。AIも活用し、支援の質とスピードを高めます。</p></article>
+        </div>
+        <div class="support-promise reveal"><strong>申請は、目的ではない。</strong><p>国の支援金を、御社の成長につながる具体的な行動へ変える。そのために、制度と現場の間に立ち、わかりやすく、誠実に伴走します。</p></div>
       </div>
     </section>
 
@@ -231,12 +278,12 @@
       <div class="wrap">
         <div class="career-head reveal">
           <div><p class="eyebrow">Career</p><h2 class="section-title">制度の現場を、<br>ずっと見てきた。</h2></div>
-          <p class="section-lead">提案する人、届ける人、支える人。そして今は、仕組みそのものを変える人へ。役割が変わっても、制度を必要とする人のそばにいることは変わりません。</p>
+          <p class="section-lead">提案する人、届ける人、支える人。そして今は、仕組みそのものを変える人へ。営業だけでなく、申請支援の体制づくりとAIによる効率化まで、制度活用の一連の現場を経験してきました。</p>
         </div>
         <div class="timeline">
           <article class="moment reveal">
             <div class="moment-year">大学時代</div><div class="moment-dot"></div>
-            <div><h3>英語とユーモアから、文化を知る</h3><p>外国語学部で英語を専攻。ユーモアを通じて世界の文化を研究し、フィジーにも短期留学。人の違いを面白がる視点は、いまの対話の原点です。</p><span class="tag">ENGLISH / HUMOR</span></div>
+            <div><h3>英語とユーモアから、文化を知る</h3><p>外国語学部で英語を専攻。ユーモアを通じて世界の文化を研究し、フィジーにも短期留学。TOEIC最高805点です。……いまは、すっかり使っていません。</p><span class="tag">ENGLISH / HUMOR</span></div>
           </article>
           <article class="moment reveal">
             <div class="moment-year">新卒入社</div><div class="moment-dot"></div>
@@ -263,12 +310,12 @@
         <div class="values-photo reveal"><img src="assets/profile-rugby.jpg" alt="ラグビー場で子どもと手を合わせる杉山正勝" loading="lazy"></div>
         <div class="reveal">
           <p class="eyebrow">My Values</p>
-          <h2 class="section-title">強さより、<br>続ける力。</h2>
-          <p class="section-lead">小中学校では柔道、高校ではラグビー。どちらも友人に誘われて始めました。細身の自分には正直きつかった。でも、そこで覚えたのは、派手な強さより、逃げずに続けることでした。</p>
+          <h2 class="section-title">任せていただく以上、<br>最後まで。</h2>
+          <p class="section-lead">助成金・補助金は、お客様の大切な投資判断に関わる仕事です。制度の説明だけで終わらず、何を実現したいのかを理解し、同じ方向を向いて進むことを大切にしています。</p>
           <div class="value-list">
             <div class="value"><span class="value-num">01</span><div><h3>難しいことを、わかりやすく</h3><p>制度もAIも、使う人に伝わってこそ価値になる。</p></div></div>
-            <div class="value"><span class="value-num">02</span><div><h3>一度きりより、長く向き合う</h3><p>会社も事業も一筋。信頼は時間の中で育つもの。</p></div></div>
-            <div class="value"><span class="value-num">03</span><div><h3>まじめな仕事に、少しのユーモアを</h3><p>誠実さはそのままに、場を明るくする余白を忘れない。</p></div></div>
+            <div class="value"><span class="value-num">02</span><div><h3>御社にとっての意味を考える</h3><p>制度ありきではなく、実現したい事業から逆算する。</p></div></div>
+            <div class="value"><span class="value-num">03</span><div><h3>最後まで誠実に向き合う</h3><p>大切な投資判断を任せていただく責任を忘れない。</p></div></div>
           </div>
         </div>
       </div>
@@ -278,7 +325,7 @@
       <div class="wrap">
         <div class="off-head reveal">
           <div><p class="eyebrow">Off Time</p><h2 class="section-title">気づけば、<br>抱っこしている写真ばかり。</h2></div>
-          <p class="section-lead">最近いちばん楽しいのは、6歳の息子と過ごす時間。仕事を離れれば、虫と恐竜と植物の成長を追いかけています。</p>
+          <p class="section-lead">1991年、東京都足立区生まれ。仕事を離れれば、最近いちばん楽しいのは6歳の息子と過ごす時間。虫と恐竜と植物の成長を追いかけています。</p>
         </div>
         <div class="gallery reveal">
           <figure class="photo-card"><img src="assets/profile-family.jpg" alt="子どもを抱っこしながら一緒に遊ぶ杉山正勝" loading="lazy"><figcaption class="photo-caption"><strong>子どもと遊ぶ週末</strong><span>虫・恐竜イベント、人生ゲーム、カードゲーム</span></figcaption></figure>
@@ -293,8 +340,8 @@
     </section>
 
     <section class="closing">
-      <blockquote>変わり続ける仕事に、<br>変わらない誠実さを。</blockquote>
-      <p>制度の現場と、人の気持ちをつなぐ仕事をしていきます。</p>
+      <blockquote>御社の次の一歩に、<br>使える制度を。</blockquote>
+      <p>制度の現場と企業の挑戦をつなぎ、事業を前へ進めます。</p>
     </section>
   </main>
 
